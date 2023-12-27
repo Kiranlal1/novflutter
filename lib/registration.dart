@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-void main() {
-  runApp(MaterialApp(
-      home: Registration(),
-      useInheritedMediaQuery: true,
-      debugShowCheckedModeBanner: fale));
-}
+
+import 'loginwithvalidation.dart';
+
+
+// void main() {
+//   runApp(MaterialApp(
+//       home: Registration(),
+//       useInheritedMediaQuery: true,
+//       debugShowCheckedModeBanner: false));
+//}
 
 class Registration extends StatelessWidget{
   GlobalKey<FormState> formkey= GlobalKey();
@@ -72,10 +76,28 @@ class Registration extends StatelessWidget{
                       borderRadius: BorderRadius.circular(30)
                     ),
                   ),
-                  validator: ,
+                  validator: (password){
+                    if(password!.isEmpty || password.length<8){
+                      return "Enter valid password";
+                    }
+                    else{
+                      return null;
+                    }
+                  },
                 ),
               ),
-              ElevatedButton(onPressed: () {}, child: null),
+              ElevatedButton(
+                onPressed: () {
+                  final valid=formkey.currentState!.validate();
+                  if(valid){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>loginpage()));
+                  }
+                },
+                child: Text("create account"),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    foregroundColor: Colors.black),
+              ),
 
             ],
           ),

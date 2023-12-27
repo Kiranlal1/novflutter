@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:novflutter/registration.dart';
 
 import 'homepage.dart';
 
@@ -109,7 +110,10 @@ class _loginpageState extends State<loginpage> {
                     foregroundColor: Colors.black),
               ),
               TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Registration()));
+
+                  },
                   child: Text("Not a user ! create a new account")),
             ],
           ),
