@@ -10,7 +10,7 @@ class Homepage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(children: [
+      body: ListView(children: [                                               //list
         Card(color: Colors.blue,
           child: ListTile(
             leading: Image(image: AssetImage("assets/icon/minion.png"),),
