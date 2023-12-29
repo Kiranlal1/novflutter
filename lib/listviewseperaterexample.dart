@@ -9,10 +9,10 @@ class Listseperater extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.black,
       appBar: AppBar(title: Text("ListView.separated()"),backgroundColor: Colors.green,foregroundColor: Colors.white,),
       body: ListView.separated(itemBuilder: (context,index){
-        return Card(child: ListTile(
+        return Card(color: Colors.cyan,child: ListTile(
           title: Text("${title[index]}"),
         ),);
       }, separatorBuilder: (context,index){
