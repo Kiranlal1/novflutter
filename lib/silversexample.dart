@@ -35,12 +35,17 @@ class Slivers extends StatelessWidget{
             ),
           ),
           SliverList(delegate: SliverChildBuilderDelegate((context,index){
-            return Card(color: color[index],
-              child: Container(height: 300,
-                child: Center(child: Text("${name[index]}")),
-                // child: Center(child: Text("This is an awesome shopping platform")),
+            return Card(
+              child: Container(
+                child: Text("This is an awesome shopping platform"),
               ),
             );
+            // return Card(color: color[index],
+            //   child: Container(height: 500,
+            //     child: Center(child: Text("${name[index]}")),
+            //     // child: Center(child: Text("This is an awesome shopping platform")),
+            //   ),
+            // );
           },childCount: color.length)),
         ],
       ),
