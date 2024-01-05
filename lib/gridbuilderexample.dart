@@ -56,17 +56,18 @@ class Gridbuilder extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(//Icon(Icons.arrow_left),
         title: Text("Grid View"),
+        leading: Icon(Icons.arrow_back),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, mainAxisSpacing: 20, crossAxisSpacing: 20),
+            crossAxisCount: 3, mainAxisSpacing: 0, crossAxisSpacing: 0),
         itemBuilder: (context, index) {
-          return Container(
+          return Card(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3)),
             color: colors[index],
             child: Column(
-              children: [
+              children: [SizedBox(height: 50,),
                 Icon(icons[index]),
                 Text("${name[index]}"),
               ],
